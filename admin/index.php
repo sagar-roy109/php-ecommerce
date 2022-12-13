@@ -1,4 +1,15 @@
-<?php include 'templates/header.php' ?>
+
+<?php 
+session_start();
+include 'templates/header.php' ?>
+<?php 
+
+  if(!$_SESSION['auth_user']['role'] == 1){
+  echo "<script>window.location.href='/index.php'</script>";
+  
+}
+
+?>
         <!-- Content wrapper -->
         <div class="content-w rapper">
           <!-- Content -->

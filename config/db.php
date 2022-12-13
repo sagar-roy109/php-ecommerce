@@ -19,7 +19,7 @@ class Database{
   private $db_pass = "";
   private $db_name = "php_ecom";
 
-  private $mysqli = "";
+  public $mysqli = "";
   private $result = array();
   private $conn = false;
 
@@ -43,8 +43,15 @@ class Database{
   public function insert($table, $params =array()){
     if($this->tableCheck($table)){
 
-      $table_columns = implode(',', array_keys($params));
-      $table_value = implode("','", $params);
+      // escape data before insert 
+      $escape_data = [];
+      foreach ($params as $key => $value) {
+        $escape_data[$key] = $this->mysqli->real_escape_string($value);
+      }
+      
+
+      $table_columns = implode(',', array_keys($escape_data));
+      $table_value = implode("','", $escape_data);
 
       $sql = "INSERT INTO $table ($table_columns) VALUES ('$table_value')";
       if($this->mysqli->query($sql)){
@@ -82,6 +89,43 @@ class Database{
       }
     }
   }
+
+
+  // delete 
+
+  public function delete($table, $where= null){
+    if($this->tableCheck($table)){
+      $sql = "DELETE FROM $table";
+      if($where != null){
+        $sql.= " WHERE $where";
+      }
+      if($this->mysqli->query($sql)){
+        array_push($this->result, "Delete successfull");
+        return true;
+      }else{
+        array_push($this->result, $this->mysqli->error );
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }
+
+
+  //select 
+
+  public function sql($sql){
+    $query = $this->mysqli->query($sql);
+
+    if($query){
+      $this->result = $query-> fetch_all(MYSQLI_ASSOC);
+      return true;
+    }else{
+      array_push($this->result, $this->mysqli->error);
+      return false;
+    }
+  }
+
 
 
 

@@ -31,6 +31,7 @@
                         <div class="mb-3">
                           <label class="form-label" for="basic-default-fullname">Category Title</label>
                           <input type="text" class="form-control" name="cat_title"placeholder="Tshirt" />
+                         
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">Add Category</button>
                       </form>
@@ -40,7 +41,7 @@
               </div>
             </div>
 
-            trait_exists
+           
 
  
             <!-- / Content -->
