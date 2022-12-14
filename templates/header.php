@@ -29,6 +29,8 @@
   <link rel="stylesheet" href="plugins/slick/slick/slick.css">
   <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
   <link rel="stylesheet" href="plugins/lightGallery-master/dist/css/lightgallery.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/style.css">
   <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
   <!--WARNING: Respond.js doesn't work if you view the page via file://-->
@@ -48,6 +50,7 @@
         
           <div class="col-12">
             <?php 
+           
               if(isset($_SESSION['auth_user'])){
               ?>
               <div class="header__actions"><a href="logout.php"> Log Out</a></div>

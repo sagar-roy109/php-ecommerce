@@ -12,19 +12,14 @@ $(document).ready(function(){
         "product_id" : product_id,
         "product_qty" : qty,
         "scope":"add",
-
       },
-      dataType : 'text',
-      
-
-      
-      
+  
       success: function(response) {
-        
-        console.log(response.status);
+        alertify.set('notifier','position', 'top-right');
+        alertify.success(response);
       },
       error: function(response){
-        console.log("ERR" + response.status);
+        
       }
 
     })

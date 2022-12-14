@@ -4,7 +4,7 @@ include 'config/db.php';?>
 <?php include 'templates/header.php' ?>
 
 <?php 
-  print_r($_SESSION);
+  
   if(isset($_GET['product'])){
 
     $product_id = $_GET['product'];

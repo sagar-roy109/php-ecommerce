@@ -69,16 +69,9 @@
       </div>
     </div>
   </footer>
-  <div class="ps-loading">
-    <div class="loader ">
-      <div class="loader__item"></div>
-      <div class="loader__item"></div>
-      <div class="loader__item"></div>
-      <div class="loader__item"></div>
-      <div class="loader__item"></div>
-    </div>
-  </div>
+  
   <script src="plugins/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
   <script src="plugins/lightGallery-master/dist/js/lightgallery-all.min.js"></script>
   <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="plugins/owl-carousel/owl.carousel.min.js"></script>
@@ -88,14 +81,20 @@
   <script src="plugins/masonry.pkgd.min.js"></script>
   <script src="plugins/isotope.pkgd.min.js"></script>
   <script src="plugins/slick/slick/slick.min.js"></script>
-  <script src="plugins/jquery.matchHeight-min.js"></script>
-  <script src="plugins/elevatezoom/jquery.elevatezoom.js"></script>
+  <script src="plugins/jquery.matchHeight-min.js"></script> 
+   <script src="plugins/elevatezoom/jquery.elevatezoom.js"></script>
   <script src="plugins/gmap3.min.js"></script>
   <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Custom scripts-->
+  
+  
   <script src="js/main.js"></script>
   <script src="js/custom.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY&amp;region=GB"></script>
+
+  
+
+
 </body>
 
 </html>

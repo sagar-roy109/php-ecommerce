@@ -36,7 +36,7 @@ if(isset($_SESSION['auth_user'])){
 
         echo "<script>window.location.href='index.php'</script>";
 
-        print_r($_SESSION['auth_user']);
+        
 
       }
 
