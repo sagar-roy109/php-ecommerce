@@ -1,3 +1,34 @@
+<?php include '../config/db.php' ?>
+<?php
+  $db = new Database();
+  if (isset($_POST['submit'])) {
+    $data = [];
+    $data['cat_title'] = $db->mysqli->real_escape_string($_POST['cat_title']);
+    $data['slug'] = $db->mysqli->real_escape_string($_POST['slug']);
+    $data['description'] = $db->mysqli->real_escape_string($_POST['description']);
+    $data['status'] =  isset($_POST['status']) ? '1' : '0';
+    $data['popular'] = isset($_POST['popular']) ? '1' : '0';
+    $data['meta_title'] = $db->mysqli->real_escape_string($_POST['meta_title']);
+    $data['meta_desc'] = $db->mysqli->real_escape_string($_POST['meta_desc']);
+    $data['meta_keywords'] = $db->mysqli->real_escape_string($_POST['meta_keywords']);
+    $image = $_FILES['image']['name'];
+    $path = "../uploads";
+    $image_ext = pathinfo($image, PATHINFO_EXTENSION);
+    $file_name = time() . '.' . $image_ext;
+    $data['image'] = $file_name;
+
+    
+    $insert = $db->insert('categories', $data);
+
+    if ($insert) {
+      move_uploaded_file($_FILES['image']['tmp_name'], $path . '/' . $file_name);
+      $_SESSION['message'] = "category added";
+    }
+  }
+  ?>
+
+<div class="content-wrapper">
+
 <!-- form  -->
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
@@ -55,3 +86,4 @@
       </div>
     </div>
   </div>
+</div>

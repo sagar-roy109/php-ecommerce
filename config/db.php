@@ -79,6 +79,7 @@ class Database{
       if($where != null){
         $sql .= " WHERE $where";
       }
+      
 
       if($this->mysqli->query($sql)){
         array_push($this->result, "Update successfull");

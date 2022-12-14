@@ -1,7 +1,7 @@
 <?php
 include '../config/db.php';
 $db = new Database();
-$db->sql("SELECT * FROM categories");
+$db->sql("SELECT * FROM products");
 $data = $db->getResult();
 ?>
 <div class="container">
@@ -11,15 +11,19 @@ $data = $db->getResult();
       <table class="table">
         <thead>
           <tr>
-            <th>Title</th>
+            <th>Name</th>
             <th>Slug</th>
-            <th>Description</th>
+            <th> Small Description</th>
+            <th> Description</th>
+            <th> Original Price</th>
+            <th> Sale Price</th>
             <th>Image</th>
+            <th> QTY</th>
+            <th>Status</th>
+            <th>Trending</th>
             <th>Meta Title</th>
             <th>Meta Desc</th>
             <th>Meta Keywords</th>
-            <th>Status</th>
-            <th>Popular</th>
             <th>Created at</th>
             <th>Action</th>
           </tr>
@@ -35,17 +39,26 @@ $data = $db->getResult();
 
 
               <tr>
-                <td><?php echo $val['cat_title'] ?></td>
+                <td><?php echo $val['name'] ?></td>
                 <td><?php echo $val['slug'] ?></td>
+                <td>
+                  <?php echo $val['small_desc'] ?>
+                </td>
                 <td>
                   <?php echo $val['description'] ?>
                 </td>
                 <td>
+                  <?php echo $val['original_price'] ?>
+                </td>
+                <td>
+                  <?php echo $val['sale_price'] ?>
+                </td>
+                <td>
                   <img style="width: 50px; height: 50px" src="../uploads/<?php echo $val['image'] ?>">
                 </td>
-                <td><?php echo $val['meta_title'] ?></td>
-                <td><?php echo $val['meta_desc'] ?></td>
-                <td><?php echo $val['meta_keywords'] ?></td>
+                <td>
+                  <?php echo $val['qty'] ?>
+                </td>
                 <?php
 
                 if ($val['status'] == 1) {
@@ -57,13 +70,17 @@ $data = $db->getResult();
                 ?>
                 <?php
 
-                if ($val['popular'] == 1) {
+                if ($val['trending'] == 1) {
                   echo '<td><span class="badge bg-label-primary me-1">Active</span></td>';
                 } else {
                   echo '<td><span class="badge bg-label-danger me-1">Deactive</span></td>';
                 }
 
                 ?>
+                <td><?php echo $val['meta_title'] ?></td>
+                <td><?php echo $val['meta_desc'] ?></td>
+                <td><?php echo $val['meta_keywords'] ?></td>
+                
                 <td><?php echo $val['created_at'] ?></td>
                 <td>
                   <div class="dropdown">
@@ -71,8 +88,8 @@ $data = $db->getResult();
                       <i class="bx bx-dots-vertical-rounded"></i>
                     </button>
                     <div class="dropdown-menu">
-                      <a class="dropdown-item" href="category_edit.php?id=<?php echo $val['cat_id']?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
-                      <a class="dropdown-item" href="category_delete.php?id=<?php echo $val['cat_id']?>"><i class="bx bx-trash me-1"></i> Delete</a>
+                      <a class="dropdown-item" href="product_edit.php?id=<?php echo $val['id']?>"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                      <a class="dropdown-item" href="product_delete.php?id=<?php echo $val['id']?>"><i class="bx bx-trash me-1"></i> Delete</a>
                     </div>
                   </div>
                 </td>
