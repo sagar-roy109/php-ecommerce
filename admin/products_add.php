@@ -7,7 +7,7 @@
 
   // get category list 
 
-  $db->sql("SELECT * FROM categories");
+  $db->sql("SELECT * FROM categories ");
   $category = $db->getResult();
   
 

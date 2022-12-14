@@ -12,18 +12,18 @@ $data = $db->getResult();
         <thead>
           <tr>
             <th>Name</th>
-            <th>Slug</th>
-            <th> Small Description</th>
-            <th> Description</th>
+            <!-- <th>Slug</th> -->
+            <!-- <th> Small Description</th> -->
+            <!-- <th> Description</th> -->
             <th> Original Price</th>
             <th> Sale Price</th>
             <th>Image</th>
             <th> QTY</th>
             <th>Status</th>
-            <th>Trending</th>
+            <!-- <th>Trending</th>
             <th>Meta Title</th>
             <th>Meta Desc</th>
-            <th>Meta Keywords</th>
+            <th>Meta Keywords</th> -->
             <th>Created at</th>
             <th>Action</th>
           </tr>
@@ -40,13 +40,13 @@ $data = $db->getResult();
 
               <tr>
                 <td><?php echo $val['name'] ?></td>
-                <td><?php echo $val['slug'] ?></td>
-                <td>
-                  <?php echo $val['small_desc'] ?>
-                </td>
-                <td>
-                  <?php echo $val['description'] ?>
-                </td>
+                <!-- <td><?//php echo $val['slug'] ?></td> -->
+                <!-- <td> -->
+                  <?//php echo $val['small_desc'] ?>
+                <!-- </td> -->
+                <!-- <td> -->
+                  <?//php echo $val['description'] ?>
+                <!-- </td> -->
                 <td>
                   <?php echo $val['original_price'] ?>
                 </td>
@@ -77,9 +77,9 @@ $data = $db->getResult();
                 }
 
                 ?>
-                <td><?php echo $val['meta_title'] ?></td>
-                <td><?php echo $val['meta_desc'] ?></td>
-                <td><?php echo $val['meta_keywords'] ?></td>
+                <!-- <td><?//php echo $val['meta_title'] ?></td> -->
+                <!-- <td><?//php echo $val['meta_desc'] ?></td> -->
+                <!-- <td><?//php echo $val['meta_keywords'] ?></td> -->
                 
                 <td><?php echo $val['created_at'] ?></td>
                 <td>

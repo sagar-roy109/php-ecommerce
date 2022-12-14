@@ -94,6 +94,7 @@
   <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
   <!-- Custom scripts-->
   <script src="js/main.js"></script>
+  <script src="js/custom.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY&amp;region=GB"></script>
 </body>
 

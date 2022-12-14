@@ -8,7 +8,7 @@ $db = new Database();
 
 // get category list 
 
-$db->sql("SELECT * FROM categories");
+$db->sql("SELECT * FROM categories ");
 $category = $db->getResult();
 
 if (isset($_POST['submit'])) {

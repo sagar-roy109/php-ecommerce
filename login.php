@@ -28,6 +28,7 @@ if(isset($_SESSION['auth_user'])){
         
 
         $_SESSION['auth_user'] = [
+          'user_id' => $data[0]['user_id'],
           'name' => $data[0]['user_name'],
           'email' => $data[0]['email'],
           'role' => $data[0]['role']
@@ -66,7 +67,7 @@ if(isset($_SESSION['auth_user'])){
 ?>
 
 <div class="container mt-5">
-  <h2 class="text-center">Register</h2>
+  <h2 class="text-center">Login</h2>
   <?php if(isset($error)){ ?> 
     <p class="text-danger"> <?php echo $error ;?></p>
  <?php  }?>
@@ -84,7 +85,7 @@ if(isset($_SESSION['auth_user'])){
   </div>
   
   
-  <button type="submit" name="register" class="btn btn-primary">Register</button>
+  <button type="submit" name="register" class="btn btn-primary">Login</button>
 </form>
 <p style="margin-top:10px">Not Registered ?<a href="register.php"> Create account here</a> </p>
 </div>
