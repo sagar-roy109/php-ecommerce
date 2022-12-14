@@ -20,7 +20,13 @@ $results = $db->getResult();
           foreach ($results as $key => $value) {
           ?>
           <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 ">
-            <div class="ps-block--category" data-mh="category"><a class="ps-block__overlay" href="index.php?category=<?php echo $value['cat_id'];?>"></a><i class="furniture-sofa-2"></i><a href="product-listing.html"><?php echo $value['cat_title'];?></a></div>
+            <div class="ps-block--category" data-mh="category">
+              <a class="ps-block__overlay" href="index.php?category=<?php echo $value['cat_id'];?>"></a>
+                
+              <img style="width: 100px; height:100px; display:block; margin: 0 auto" src="uploads/<?php echo $value['image'];?>" alt="<?php echo $value['cat_title'];?>">
+              <p style="font-weight: bold; text-transform:uppercase; margin-top:20px; color: #000"><?php echo $value['cat_title'];?></p>
+              
+            </div>
           </div>
           <?php
           }

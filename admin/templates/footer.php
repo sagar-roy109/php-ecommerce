@@ -6,8 +6,7 @@
                 <script>
                   document.write(new Date().getFullYear());
                 </script>
-                , made with ❤️ by
-                <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                , made with ❤️ by Group (Sagar Roy, Ajay, Tejaswani)
               </div>
               <div>
                 <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
