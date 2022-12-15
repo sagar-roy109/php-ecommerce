@@ -1,10 +1,13 @@
 $(document).ready(function(){
+  
 
   $('.addCart').click(function(e){
     e.preventDefault();
+   
     let qty =$('#getQty').val();
+   
     let product_id = $(this).attr('value');
-    
+   
     $.ajax({
       method : "POST",
       url: "handleCart.php",
@@ -15,9 +18,16 @@ $(document).ready(function(){
       },
   
       success: function(response) {
-        alertify.set('notifier','position', 'top-right');
-        alertify.success(response);
-      },
+        // alertify.set('notifier','position', 'top-right');
+        // alertify.success(response);
+    
+          console.log(response);
+        if(response == 1000){
+          window.location.href='login.php';
+        }else{
+          $('#cart_items').text(response);
+        }
+        },
       error: function(response){
         
       }

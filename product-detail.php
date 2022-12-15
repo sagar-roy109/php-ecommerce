@@ -60,7 +60,7 @@ include 'config/db.php';?>
                       </div>
                     </div>
                     <div class="ps-product__shopping">
-                      <a class="ps-btn addCart" value="<?php echo $details[0]['id']?>" href="cart.php">Add To Cart</a>
+                      <a class="ps-btn addCart" value="<?php echo $details[0]['id']?>" href="#">Add To Cart</a>
                     </div>
                     
                   </div>

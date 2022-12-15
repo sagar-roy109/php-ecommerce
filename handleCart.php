@@ -1,5 +1,7 @@
 <?php 
 session_start();
+
+
 include ('config/db.php');
 
 if(isset($_SESSION['auth_user'])){
@@ -19,17 +21,23 @@ if(isset($_SESSION['auth_user'])){
         $check_cart = $db->sql("SELECT * FROM carts WHERE product_id = '$product_id' AND user_id = '$user_id ' ");
         $check = $db->getResult();
         $_SESSION['check'] = $check;
+        
         if(count($check)>0){
-          
-          echo "Already In The Cart";
-          
-        }else{
+          echo $_SESSION['auth_user']['cart'];
+         
+          }else{
           $query= $db-> insert('carts',$data);
           if($query){
-            echo "Added to Cart";
+            $count = $db->sql("SELECT * FROM carts");
+            $items = $db->getResult();
+            $item_count = count($items);
+            $_SESSION['auth_user']['cart'] = $item_count;
             
-          }
+            if ($_SESSION['auth_user']['cart']){
+              echo $_SESSION['auth_user']['cart'];
+            }
         }
+      }
        
         break;
         default :
@@ -40,7 +48,7 @@ if(isset($_SESSION['auth_user'])){
  
   // echo "<script>window.location.href='index.php'</script>";
 }else{
-  echo 401;
+  echo 1000;
 }
 
 ?>

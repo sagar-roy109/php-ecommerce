@@ -50,19 +50,20 @@
         
           <div class="col-12">
             <?php 
+            echo "<pre>";
+              print_r($_SESSION['auth_user']);
+            echo "</pre>";
            
               if(isset($_SESSION['auth_user'])){
               ?>
               <div class="header__actions"><a href="logout.php"> Log Out</a></div>
                <div class="header__actions"><a href="logout.php"> <?php echo "Hello, ". $_SESSION['auth_user']['name'] ?></a></div>
                
-               
-                
              <?php }
              else{
               ?>
 
-              <div class="header__actions"><a href="register.php"> Regiser</a>
+              <div class="header__actions"><a href="register.php"> Register</a>
               <?php
              }
             ?>
@@ -162,7 +163,7 @@
           <li><a href="contact-us.html">Contact</a></li>
         </ul>
         <div class="menu-toggle"><span></span></div>
-        <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i>20</i></span><img src="images/market.svg" alt=""></a>
+        <div class="ps-cart"><a class="ps-cart__toggle" href="#"><span><i id="cart_items"><?= isset($_SESSION['auth_user']['cart'])? $_SESSION['auth_user']['cart']:'0' ?></i></span><img src="images/market.svg" alt=""></a>
           <div class="ps-cart__listing">
             <div class="ps-cart__content">
               <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
