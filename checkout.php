@@ -24,8 +24,9 @@ include 'config/functions.php';
 
   echo "<pre>";
 
-  print_r($items);
+  print_r($user);
   echo "</pre>";
+
     ?>
 
 <div class="ps-hero bg--cover" data-background="images/hero/bread-1.jpg">
@@ -41,7 +42,7 @@ include 'config/functions.php';
     </div>
     <div class="ps-checkout">
       <div class="ps-container">
-        <form class="ps-form--checkout" action="http://warethemes.com/html/flourish/do_action" method="post">
+        <form method="POST" action="checkOut_process.php" class="ps-form--checkout" action="http://warethemes.com/html/flourish/do_action" method="post">
           <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
                   <div class="ps-checkout__billing">
@@ -50,7 +51,7 @@ include 'config/functions.php';
                           <label> Name<span>*</span>
                           </label>
                           <div class="form-group__content">
-                            <input require class="form-control" name="user_name" value="<?php $user[0]['user_name'] ?>" type="text">
+                            <input require class="form-control" name="user_name" value="<?php echo $user[0]['user_name'] ?>" type="text">
                           </div>
                         </div>
                         
@@ -58,7 +59,7 @@ include 'config/functions.php';
                           <label>Email Address<span>*</span>
                           </label>
                           <div class="form-group__content">
-                            <input require class="form-control" type="email" name="email" value="<?php $user[0]['user_name'] ?>">
+                            <input require class="form-control" type="email" name="email" value="<?php echo $user[0]['email'] ?>">
                           </div>
                         </div>
                         
@@ -77,7 +78,7 @@ include 'config/functions.php';
                           </div>
                         </div>
               <div class="form-group__content">
-               <input type="submit" class="btn ps-btn" value="Place order">
+               <input type="submit" name="submit" class="btn ps-btn" value="Place order">
                 </div>
                   </div>
                 </div>
@@ -108,6 +109,7 @@ include 'config/functions.php';
                           ?>
                           <tr>
                             <td>Order Total</td>
+                            <input type="hidden" name="total_price" value=<?php echo $total ?>>
                             <td>$<?= $total ?></td>
                           </tr>
                           

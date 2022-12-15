@@ -7387,6 +7387,7 @@ svg {
   background-color: #f7f7f7;
   height: 45px;
   border-color: #f7f7f7;
+  color: #000 !important;
 }
 
 .ps-form--checkout .form-control:focus {

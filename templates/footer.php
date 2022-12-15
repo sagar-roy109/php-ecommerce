@@ -33,7 +33,16 @@
   <script src="js/custom.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsUcTjt43mTheN9ruCsQVgBE-wgN6_AfY&amp;region=GB"></script>
 
-  
+  <script>
+  <?php 
+    if(isset($_SESSION['message'])){
+  ?>
+   alertify.set('notifier','position', 'top-right');
+ alertify.success("<?php echo $_SESSION['message'] ?>");
+ <?php 
+  unset($_SESSION['message']);
+ }?>
+</script>
 
 
 </body>

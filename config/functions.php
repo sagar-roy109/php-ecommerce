@@ -10,3 +10,11 @@ function shortString($string)
     echo $string;
   }
 }
+function small($string)
+{
+  if (strlen($string) >= 40) {
+    return substr($string, 0, 40) . " ... " . substr($string, -5);
+  } else {
+    return $string;
+  }
+}
