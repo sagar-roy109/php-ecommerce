@@ -4,7 +4,7 @@
      
 
         $db = new Database();
-        $db->sql("SELECT * FROM products WHERE  trending = 1 ");
+        $db->sql("SELECT * FROM products WHERE  trending = 1 AND status = 1 ");
         $products = $db->getResult();
   
        

@@ -16,16 +16,10 @@ include 'config/functions.php';
     $db->sql("SELECT c.id as cid, c.product_id, c.product_qty, p.id as pid, p.name, p.image, p.sale_price FROM carts c, products p WHERE c.product_id = p.id AND c.user_id='$user_id'");
     $items = $db->getResult();
     // get user details
-    $db->sql('SELECT * FROM users');
+    $db->sql("SELECT * FROM users WHERE user_id = '$user_id'");
     $user =  $db->getResult();
 
     $total = 0;
-
-
-  echo "<pre>";
-
-  print_r($user);
-  echo "</pre>";
 
     ?>
 

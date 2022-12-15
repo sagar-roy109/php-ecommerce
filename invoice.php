@@ -31,9 +31,10 @@ $pdf->Cell(10,10,$orders[0]['address'], 0, 1);
 $pdf->Cell(50,10,'Phone:', 0, 0);
 $pdf->Cell(10,10,$orders[0]['phone'], 0, 1);
 
-$db->sql("SELECT products.name, products.sale_price, order_items.qty FROM products,order_items,orders WHERE order_items.product_id = products.id AND order_items.order_id = orders.id");
+$db->sql("SELECT products.name, products.sale_price, order_items.qty FROM products INNER JOIN order_items ON order_items.product_id = products.id INNER JOIN orders ON order_items.order_id = orders.id");
 
 $products_all = $db->getResult();
+
 
 // print_r($products_all);
 
@@ -53,3 +54,5 @@ $pdf->Cell(10,10,'$ '.$orders[0]['total_price'], 0, 1);
 
 
 $pdf->Output();
+
+

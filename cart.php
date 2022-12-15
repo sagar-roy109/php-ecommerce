@@ -38,10 +38,10 @@ include 'config/db.php';
             <thead>
               <tr>
                 <th>All Products</th>
-                
-                <th>Quantity</th>
                 <th>Price</th>
-                <th></th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@ include 'config/db.php';
                 foreach ($items as $item) { ?>
                 <tr>
                 <td><a class="ps-product--compare" href="product-detail.php?product<?php echo $item['product_id'] ?>"><img class="mr-15" src="uploads/<?php echo $item['image'] ?>" alt="product_image"> Air jordan One mid</a></td>
-                
+                <td><?php echo $item['sale_price'] ?></td>
                 <td class="count">
                 <input type="hidden" id="product_id" value="<?php echo $item['product_id'] ?>">
                 <input type="hidden" class="price_cal" value="<?php echo $item['sale_price'] ?>">
@@ -60,9 +60,9 @@ include 'config/db.php';
                   </div>
                 </td>
                 <td class="price">$<?php echo $t = $item['sale_price'] * $item['product_qty'];   ?></td>
-                <td>
+                <!-- <td>
                   <div class="ps-remove"></div>
-                </td>
+                </td> -->
               </tr>
                   <?php
                 }

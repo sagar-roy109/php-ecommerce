@@ -40,6 +40,8 @@ if(isset($_SESSION['auth_user'])){
 
       }
 
+      $error = "Password not match please check both password !";
+
 
       // if($_POST['password'] == $_POST['rePassword']){
       //   $data = [];

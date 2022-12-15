@@ -31,6 +31,7 @@ if(isset($_POST['submit'])){
         $order_items = $db->insert('order_items', $order_data);
         if($order_items){
           $db->delete('carts', 'user_id='.$user_id);
+          $_SESSION['auth_user']['cart'] = 0;
           header("Location:my_order.php");
         }
 

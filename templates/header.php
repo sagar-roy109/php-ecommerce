@@ -75,6 +75,7 @@
         <ul class="main-menu menu">
           <li class="current-menu-item menu-item-has-children"><a href="index.php">Home</a></li>
           <li class="menu-item-has-children has-mega-menu"><a href="products.php">Products</a>
+          <li class="menu-item-has-children has-mega-menu"><a href="my_order.php">My Orders</a>
           </li>
           <li><a href="checkout.php">checkout</a></li>
           
