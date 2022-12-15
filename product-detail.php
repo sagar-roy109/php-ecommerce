@@ -47,7 +47,7 @@ include 'config/db.php';?>
                     
                     <h1><?php echo htmlspecialchars($details[0]['name'])?></h1>
                     
-                    <h3 class="ps-product__price"><del><span>$</span> 330</del> <span>£</span> 115</h3>
+                    <h3 class="ps-product__price"><del><span>$</span> <?php echo $details[0]['original_price']?></del> <span>$</span> <?php echo $details[0]['sale_price']?></h3>
                     <div class="ps-product__short-desc">
                       <p><?php echo $details[0]['small_desc']?></p>
                     </div>
@@ -86,7 +86,5 @@ include 'config/db.php';?>
     </main>
 
     <p id="result "></p>
-    
-    <?php include 'templates/related_products.php' ?>
     
    <?php include 'templates/footer.php' ?>

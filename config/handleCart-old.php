@@ -19,6 +19,11 @@ if(isset($_SESSION['auth_user'])){
           echo 501;
         }
         break;
+        case "cart":
+          $data=[];
+        $data['product_id'] = $_POST['product_id'];
+        $data['product_qty'] = $_POST['product_qty'];
+        $data['user_id'] = $_SESSION['auth_user']['user_id'];
         default :
     echo 500;
     }

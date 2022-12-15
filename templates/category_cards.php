@@ -34,6 +34,5 @@ $results = $db->getResult();
         
         </div>
       </div>
-      <div class="ps-section__footer text-center"><a class="ps-btn" href="#">View all categories</a></div>
     </div>
   </div>
