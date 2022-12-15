@@ -1,12 +1,13 @@
 <?php
 include '../config/db.php';
+include '../config/functions.php'; 
 $db = new Database();
 $db->sql("SELECT * FROM products");
 $data = $db->getResult();
 ?>
 <div class="container">
   <div class="card mt-5 mb-5">
-    <h5 class="card-header">Table Basic</h5>
+    <h5 class="card-header">All Products</h5>
     <div class="table-responsive text-nowrap">
       <table class="table">
         <thead>
@@ -24,6 +25,7 @@ $data = $db->getResult();
             <th>Meta Title</th>
             <th>Meta Desc</th>
             <th>Meta Keywords</th> -->
+            <th>Trending</th>
             <th>Created at</th>
             <th>Action</th>
           </tr>
@@ -39,7 +41,7 @@ $data = $db->getResult();
 
 
               <tr>
-                <td><?php echo $val['name'] ?></td>
+                <td><?php shortString($val['name'])  ?></td>
                 <!-- <td><?//php echo $val['slug'] ?></td> -->
                 <!-- <td> -->
                   <?//php echo $val['small_desc'] ?>

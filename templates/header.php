@@ -71,7 +71,7 @@
       </div>
     </div>
     <nav class="navigation">
-      <div class="ps-container"><a class="ps-logo" href="/"><img src="images/logo.png" alt="logo"></a>
+      <div class="ps-container"><a class="ps-logo" href="index.php"><img src="images/logo.png" alt="logo"></a>
         <ul class="main-menu menu">
           <li class="current-menu-item menu-item-has-children"><a href="index.php">Home</a></li>
           <li class="menu-item-has-children has-mega-menu"><a href="products.php">Products</a>
